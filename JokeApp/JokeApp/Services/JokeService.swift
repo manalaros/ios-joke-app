@@ -1,6 +1,6 @@
 import Foundation
 
-/// Service responsible for fetching a `Joke` from the Official Joke API
+/// Service responsible for fetching a `Joke` from the Official Joke API.
 public final class JokeService {
     public enum ServiceError: Error {
         case badResponse
@@ -16,7 +16,7 @@ public final class JokeService {
         self.session = session
     }
 
-    /// Fetch a random joke asynchronously
+    /// Fetch a random joke asynchronously.
     public func fetchJoke() async throws -> Joke {
         do {
             let (data, response) = try await session.data(from: url)
