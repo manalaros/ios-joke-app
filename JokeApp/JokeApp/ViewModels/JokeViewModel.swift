@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import Combine
 
 @MainActor
 public final class JokeViewModel: ObservableObject {
@@ -9,8 +10,11 @@ public final class JokeViewModel: ObservableObject {
 
     private let service: JokeService
 
-    public init(service: JokeService = JokeService()) {
-        self.service = service
+    // Initialize with an optional service to avoid evaluating a default
+    // parameter (which can cause actor/isolation warnings). The real
+    // service is created inside the initializer if none is provided.
+    public init(service: JokeService? = nil) {
+        self.service = service ?? JokeService()
     }
 
     /// Loads a joke from the service. Handles loading state and errors.
