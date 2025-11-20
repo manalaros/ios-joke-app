@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="60%" stop-color="#00C2FF"/>
+      <stop offset="100%" stop-color="#6A00FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="200" ry="200" fill="url(#g)" />
+
+  <!-- Slight inner highlight -->
+  <rect x="28" y="28" width="968" height="968" rx="180" ry="180" fill="white" opacity="0.03" />
+
+  <!-- Smiley face (simple) -->
+  <g transform="translate(0, -10)" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Eyes -->
+    <circle cx="360" cy="380" r="36" fill="#FFFFFF" opacity="0.95" />
+    <circle cx="664" cy="380" r="36" fill="#FFFFFF" opacity="0.95" />
+
+    <!-- Mouth (curve) -->
+    <path d="M 320 560 C 420 700 604 700 704 560" stroke="#FFFFFF" stroke-width="40" fill="none" opacity="0.95" />
+  </g>
+
+</svg>
