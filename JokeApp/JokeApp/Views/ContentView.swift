@@ -6,12 +6,13 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-                // Clean background
-                Color(.systemBackground)
-                    .ignoresSafeArea()
-                
-                VStack(spacing: 0) {
+            GeometryReader { geometry in
+                ZStack {
+                    // Clean background
+                    Color(.systemBackground)
+                        .ignoresSafeArea()
+
+                    VStack(spacing: 0) {
                     // Custom header (prettier app title)
                     VStack(spacing: 6) {
                         Text("Joke Time")
@@ -33,17 +34,20 @@ struct ContentView: View {
 
                     Spacer()
 
-                    // Joke card
-                    Group {
-                        if vm.isLoading {
-                            LoadingView()
-                        } else if let joke = vm.joke {
-                            JokeCardView(joke: joke)
-                        } else {
-                            placeholderCard
+                    // Joke card (centered & constrained on wide screens)
+                    HStack { Spacer(minLength: 0)
+                        Group {
+                            if vm.isLoading {
+                                LoadingView()
+                            } else if let joke = vm.joke {
+                                JokeCardView(joke: joke)
+                            } else {
+                                placeholderCard
+                            }
                         }
+                        .frame(maxWidth: min(720, geometry.size.width * 0.9), maxHeight: 450)
+                        Spacer(minLength: 0)
                     }
-                    .frame(maxHeight: 450)
                     
                     Spacer()
                     
@@ -78,22 +82,25 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .shadow(color: Color(hex: "0066FF").opacity(0.28), radius: 12, x: 0, y: 6)
                     }
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, geometry.size.width > 700 ? 40 : 24)
                     .padding(.bottom, 50)
-                    
-                    // Error message
+
+                    // Error message (inside the main VStack so it's visible below the button)
                     if let error = vm.errorMessage {
                         Text(error)
                             .font(.system(size: 13))
                             .foregroundColor(.red)
-                            .padding(.horizontal, 24)
+                            .padding(.horizontal, geometry.size.width > 700 ? 40 : 24)
                             .padding(.bottom, 20)
                     }
-                }
-            }
-            .navigationBarHidden(true)
-        }
-    }
+                } // VStack
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } // ZStack
+        } // GeometryReader
+    } // NavigationView
+    .navigationBarHidden(true)
+    .navigationViewStyle(StackNavigationViewStyle())
+}
     
     
     

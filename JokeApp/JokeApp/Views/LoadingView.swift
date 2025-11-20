@@ -50,7 +50,7 @@ struct LoadingView: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color(.systemGray5), lineWidth: 1)
         )
-        .padding(.horizontal, 24)
+        .frame(maxWidth: 720)
     }
 }
 

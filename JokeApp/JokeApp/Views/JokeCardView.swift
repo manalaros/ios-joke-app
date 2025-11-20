@@ -65,7 +65,7 @@ struct JokeCardView: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color(.systemGray5), lineWidth: 1)
         )
-        .padding(.horizontal, 24)
+        .frame(maxWidth: 720)
         .transition(.scale.combined(with: .opacity))
         .animation(.spring(response: 0.6, dampingFraction: 0.75), value: joke.id)
     }
