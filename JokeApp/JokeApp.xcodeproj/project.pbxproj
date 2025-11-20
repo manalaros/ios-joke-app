@@ -24,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A83F074F2ECFBB1F007817D6 /* JokeApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = JokeApp.xcodeproj; sourceTree = "<group>"; };
 		A8A0EEDE2ECE1E9000BD94C9 /* JokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A0EEEB2ECE1E9200BD94C9 /* JokeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A0EEF52ECE1E9200BD94C9 /* JokeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +73,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A83F07512ECFBB1F007817D6 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A8A0EED52ECE1E9000BD94C9 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +204,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A8A0EEDF2ECE1E9000BD94C9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A83F07512ECFBB1F007817D6 /* Products */;
+					ProjectRef = A83F074F2ECFBB1F007817D6 /* JokeApp.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A8A0EEDD2ECE1E9000BD94C9 /* JokeApp */,

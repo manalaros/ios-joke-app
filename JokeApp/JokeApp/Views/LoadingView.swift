@@ -43,12 +43,12 @@ struct LoadingView: View {
         .padding(.vertical, 50)
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(.white)
-                .shadow(color: Color.black.opacity(0.08), radius: 20, x: 0, y: 10)
+                .fill(Color(UIColor.secondarySystemBackground))
+                .shadow(color: Color.black.opacity(0.06), radius: 20, x: 0, y: 10)
         )
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(.systemGray5), lineWidth: 1)
+                .stroke(Color(UIColor.separator), lineWidth: 1)
         )
         .frame(maxWidth: 720)
     }
